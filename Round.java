@@ -38,6 +38,7 @@ public class Round
 
     /**
      * Get method for secret
+     * @return secret
      */
     //D-level #4
     public int getSecret()
@@ -47,6 +48,7 @@ public class Round
     
     /**
      * Get method for numGuesses
+     * @return numGuesses
      */
     //D-level #4
     public int getNumGuesses()
@@ -56,6 +58,7 @@ public class Round
     
     /**
      * Get method for win
+     * @return getWin()
      */
     //D-level #4
     public boolean getWin()
@@ -65,6 +68,7 @@ public class Round
     
     /**
      * Get method for quit
+     * @return quit
      */
     //D-level #4
     public boolean getQuit()
@@ -74,6 +78,7 @@ public class Round
     
     /**scan
      * Get method for secret
+     * @return scan
      */
        //D-level #4
     public Scanner getScan()
@@ -85,7 +90,7 @@ public class Round
      * then numGuesses is incremented and guess is returned.
      * 
      *@param int guess - place where the person playing the game enters their guess
-     *
+     *@return guess
      */
     //D-level #5
     private int askForGuess()

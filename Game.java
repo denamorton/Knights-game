@@ -10,8 +10,8 @@ public class Game
     // instance variables scanner
     private Scanner scan;
     //C-level #1
-    private int numGuesses; //to count the number of guesses made in rounds 
-    //that are won
+    private int numGuesses; 
+    //to count the number of guesses made in rounds that are won
     private int numRoundsWon; //to count the rounds that are won
     private boolean quitGame; //to track if the player quit the game
 
@@ -131,12 +131,16 @@ public class Game
     
     /** Add a method to get the average number of guesses made over rounds 
      * that were won.
+     * 
+     * @return avg - it returns the average of the number of guesses per round
      */
     //C-level #5
     private double getAverage(){
         double avg = 0.0;
         if(numRoundsWon!=0){
-            avg = numGuesses/numRoundsWon;
+            avg = (double) numGuesses/numRoundsWon;
+            //I forgot that if we have an int/int that we would not get a double
+            //but rather a round-down
         }
         return avg;
     }   

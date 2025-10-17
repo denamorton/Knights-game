@@ -5,11 +5,8 @@ import java.util.Scanner;
  * @math goddess
  * @version D level
  * 
- * @param int secret to hold the secret number
- * @param int numGuesses to hold the number of guesses made by the player
- * @param boolean win to track if the player wins
- * @param boolean quit to track if the player quits
- * @param Scanner scan to scan for the player's inputs
+ * //I had a bunch of @param here, but not needed for instance variables.
+ * //also only use @param if it has a variable in the parentheses of the method
  */
 public class Round
 {
@@ -24,6 +21,8 @@ public class Round
     /**
      * Constructor for objects of class Round
      * It initializes everything for Round
+     * 
+     * @param Scanner s
      */
     //D-level #3
     public Round(Scanner s)
@@ -86,19 +85,28 @@ public class Round
         return scan;
     }
     
-    /** method to enter a guess or -1 to quit. If the guess is not -1,
-     * then numGuesses is incremented and guess is returned.
+    /** method to enter a guess or -1 to quit. If the guess is not valid, then it keeps asking until it is 
+     * valid. If it is not -1,then numGuesses is incremented and guess is returned.
      * 
-     *@param int guess - place where the person playing the game enters their guess
-     *@return guess
+     *@return guess - it returns the player's guess as long as the guess isn't -1 and is 5 digits
+     *
      */
     //D-level #5
+    //B-level #4
     private int askForGuess()
-    {
-        System.out.println("Please enter your guess or enter -1 to quit.");
-        int guess=scan.nextInt();
-        scan.nextLine();//to get the dang scanner to accept the next scan
-        //we use this after scanning nextInt but not after scanning a nextLine
+    {   
+        int guess=0;//need to declare guess outside of while statement so that the second part of the code for this
+        //class can read it
+        
+        boolean validGuess=false;//to check that the guess is valid. the default is false.
+        while(validGuess==false){
+            System.out.println("Please enter your guess or enter -1 to quit.");
+            guess=scan.nextInt();
+            scan.nextLine();//to get the dang scanner to accept the next scan
+            //we use this after scanning nextInt but not after scanning a nextLine
+            Guess.checkGuess(guess); //in the Guess class - determines if guess is valid
+        }   
+        
         if(guess==-1){
             quit = true;
         }
@@ -107,7 +115,8 @@ public class Round
            //if you input -1, that doesn't actually count as a guess.
         }
         return guess;
-    }
+        }
+    
     
     /**
      * method to check the guess g against the correct secret number
@@ -115,9 +124,21 @@ public class Round
      * @param int g - this is the guess that will be checked 
      */
     //D-level #6
+    //B-level #6
     private void checkWin(int g){
         if(g==secret){
-            win = true;
+                win = true;
+            }
+        
+        else if(g!=-1)
+        {
+            int app = Guess.countApples(g, secret);
+            //bah humbug. Originally I had g.countApples(g, secret), forgetting that I needed to call the "Guess"
+            //class first. BAH. rookie mistake
+            int ora = Guess.countOranges(g, secret);
+            //and if I had actually looked at the directions, I would have seen this.
+            
+            printResults(app, ora);//prints results
         }
     }
     
@@ -130,7 +151,8 @@ public class Round
      * If the player quit, it prints this out with the number of guesses
      * 
      * 
-     */public void play(){
+     */
+    public void play(){
         while(!win==true && !quit == true){
             int guess = askForGuess(); //ask for the guess using the method above
             System.out.println("Your guess is: " + guess);
@@ -143,6 +165,32 @@ public class Round
         if(quit==true){
             System.out.println("Boo you! You quit. You used " + numGuesses
             + " guesses, just to quit!");
+        }
+    }
+    
+    /** method to print the number of apples and oranges from the guess. If nothing correct, prints nada
+     * 
+     * @param apples is the number of correct digits in correct places
+     * @param oranges is the number of correct digits in the wrong places
+     */
+    //B-level #5
+     private void printResults(int apples, int oranges){
+        if(apples==0 && oranges ==0){
+            System.out.println("Nada. Nothing. Zilch. Zero. Ephes.");
+        }
+        
+        if(apples>0){
+            for(int i=0; i<apples; i++){
+                System.out.print("apple");
+            }
+            System.out.println("");
+        }
+        
+        if(oranges>0){
+            for(int i=0; i<oranges; i++){
+                System.out.print("orange");
+            }
+            System.out.println("");
         }
     }
 }

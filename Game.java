@@ -93,7 +93,7 @@ public class Game
     {  
        //C-level #6
         
-       while(quitGame=false){
+       while(quitGame==false){
             Round round = new Round(scan);
             //I always forget how to declare a new object  - like here, I originally
             // had round = new Round(scan); Bah.
@@ -103,7 +103,7 @@ public class Game
             
             boolean wonLost = round.getWin();
             //to see if the round was won.
-            if(wonLost = true){
+            if(wonLost == true){
                 numGuesses = numGuesses + round.getNumGuesses();
                 //add the round's guesses to the total number of guesses
                 numRoundsWon++;

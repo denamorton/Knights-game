@@ -97,6 +97,8 @@ public class Round
     {
         System.out.println("Please enter your guess or enter -1 to quit.");
         int guess=scan.nextInt();
+        scan.nextLine();//to get the dang scanner to accept the next scan
+        //we use this after scanning nextInt but not after scanning a nextLine
         if(guess==-1){
             quit = true;
         }

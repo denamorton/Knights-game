@@ -127,7 +127,6 @@ public class Game
         if(yn.equals("n")){
             quitGame = true;
         }
-        scan.nextLine();//to get the dang scanner to accept the next scan
     }
     
     /** Add a method to get the average number of guesses made over rounds 

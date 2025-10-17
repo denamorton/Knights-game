@@ -123,10 +123,11 @@ public class Game
     //C-level #4
     private void playAgain(){
         System.out.println("Do you want to play again? y/n");
-        if(scan.nextLine().equals("n")){
+        String yn = scan.nextLine();
+        if(yn.equals("n")){
             quitGame = true;
         }
-        
+        scan.nextLine();//to get the dang scanner to accept the next scan
     }
     
     /** Add a method to get the average number of guesses made over rounds 

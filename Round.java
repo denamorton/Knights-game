@@ -95,7 +95,10 @@ public class Round
         if(guess==-1){
             quit = true;
         }
-        numGuesses++;
+        else{
+           numGuesses++;
+           //if you input -1, that doesn't actually count as a guess.
+        }
         return guess;
     }
     

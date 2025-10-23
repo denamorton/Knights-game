@@ -15,7 +15,7 @@ public class Guess
      * @return boolean returns false if g is illegal and true otherwise
      */
     public static boolean checkGuess(int g){
-        if((10000<=g && g<100000) || g==-1){
+        if((10000<=g && g<100000)&&(g!=-1)){
             return true;
         }
         System.out.println("Error - your guess must be five digits. Nothing greater. Nothing less. Five.");
@@ -68,10 +68,12 @@ public class Guess
         //here, oranges only count if the digit is correct but not in the same spot, so if i=j, we don't count that.
         for(int i=0; i<5; i++){
             for(int j=0; j<5; j++){
-                if (guessString.substring(i, i+1).equals(secretString.substring(j, j+1))&&i!=j) {
+                if (guessString.substring(i, i+1).equals(secretString.substring(j, j+1))) {
                 //originally I had "==" rather than .equals, forgetting that 
                 //.substring was looking at these numbers as Strings not ints.
-                oranges++;
+                    if(i!=j){
+                        oranges++;
+                    }
                 }   
             }
   

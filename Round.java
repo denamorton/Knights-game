@@ -113,6 +113,8 @@ public class Round
             if(Guess.checkGuess(guess)==true){
                 validGuess=true;
             }; 
+            numGuesses++;
+            //I was only counting valid guesses! was supposed to count all guesses.
             //in the Guess class - determines if guess is valid
             
         }   
@@ -121,10 +123,10 @@ public class Round
             quit = true;
         }
         //the guess ==-1 part gave me quite an issue. I believe is fixed now. 
-        else{
-           numGuesses++;
+        //else{
+          // numGuesses++;
            //if you input -1, that doesn't actually count as a guess.
-        }
+        //}
         return guess;
         }
     
@@ -164,7 +166,7 @@ public class Round
      * 
      */
     public void play(){
-        while(!win==true && !quit == true){
+        while(!win && !quit){
             int guess = askForGuess(); //ask for the guess using the method above
             System.out.println("Your guess is: " + guess);
             checkWin(guess);//checks if the guess is correct

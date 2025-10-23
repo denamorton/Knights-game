@@ -1,13 +1,27 @@
 import java.util.Scanner;
+import java.util.Random;
 /**
  * Write a description of class Round here.
  *
  * @math goddess
  * @version D level
  * 
- * *
+ * 
  * //I had a bunch of @param here, but not needed for instance variables.
  * //also only use @param if it has a variable in the parentheses of the method
+ * 
+ * This class plays one round of the game. It initializes all of the important instance 
+ * variables needed here, such as the secret number (secret), the number of Guesses (numGuesses)
+ * whether a player has won (win), or quit (quit), and starts the process for a scanner.
+ * 
+ * It also has getters for each of these five instance variables
+ * 
+ * Asks for player's guess, checks if guess wins or quits and prints out stats if so.
+ * 
+ * Prints apples and oranges to confirm digit guesses
+ * 
+ * Generates the secret number.
+ * 
  */
 
 public class Round
@@ -30,7 +44,7 @@ public class Round
     public Round(Scanner s)
     {
         // initialise instance variables
-        secret = 12345;
+        secret = generateSecret();
         numGuesses =0;
         win = false;
         quit=false;
@@ -87,7 +101,7 @@ public class Round
         return scan;
     }
     
-    /** method to enter a guess or -1 to quit. If the guess is not valid, then it keeps asking until it is 
+    /** method to enter a guess or -1 to quit. If the guess is not valid via checkGuess method, then it keeps asking until it is 
      * valid. If it is not -1,then numGuesses is incremented and guess is returned.
      * 
      *@return guess - it returns the player's guess as long as the guess isn't -1 and is 5 digits
@@ -133,6 +147,8 @@ public class Round
     
     /**
      * method to check the guess g against the correct secret number
+     * 
+     * Prints out the correct number of apples and oranges to return
      * 
      * @param int g - this is the guess that will be checked 
      */
@@ -205,4 +221,21 @@ public class Round
         }
         System.out.println("");
     }
+    
+    /** method to randomly generate the secret number
+     * 
+     * @return it returns the secret number.
+     */
+    //A-level #3/4
+     private int generateSecret(){
+         Random rng = new Random();   
+         boolean check = false;
+         int secretNum = 0;
+         while(check==false){
+                secretNum = rng.nextInt(100000)+1;
+                check = Guess.checkGuess(secretNum);
+            }
+         return secretNum;
+        }
+    
 }

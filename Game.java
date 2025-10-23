@@ -1,6 +1,13 @@
 import java.util.Scanner;
 /**
- * Write a description of class Game here.
+ * This is the high level program that allows us to play our game.
+ * There are instance variables to scan, to record the number of guesses (numGuesses), the number of rounds 
+ * won (numRounsWon), and whether or not to quit the game (quitGame).
+ * 
+ * There are a bunch of getters for these instance variables.
+ * 
+ * As long as the player wants to keep playing, it plays a Round of the game. It checks if the player wants to keep 
+ * playing. And it keeps track of stats of play.
  *
  * @author Math goddess
  * @version D-level
@@ -88,6 +95,11 @@ public class Game
      * Recall that Round is the first class created for this program.
      * 
      * Call the method play() on the Round object.
+     * 
+     * If the player's guess was correct (so round is over), it updates numGuesses and numGamesWon to 
+     * reflect the total number of guesses and wins.
+     * 
+     * 
      */
     //D-level #12
     public void play()

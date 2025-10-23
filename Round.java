@@ -8,6 +8,7 @@ import java.util.Scanner;
  * //I had a bunch of @param here, but not needed for instance variables.
  * //also only use @param if it has a variable in the parentheses of the method
  */
+
 public class Round
 {
     // private instance variables for Round class.
@@ -118,6 +119,7 @@ public class Round
         if(guess==-1){
             quit = true;
         }
+        //the guess ==-1 part gave me quite an issue. I believe is fixed now. 
         else{
            numGuesses++;
            //if you input -1, that doesn't actually count as a guess.

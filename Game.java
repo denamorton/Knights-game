@@ -141,6 +141,7 @@ public class Game
             avg = (double) numGuesses/numRoundsWon;
             //I forgot that if we have an int/int that we would not get a double
             //but rather a round-down
+            //so I added (double) up front
         }
         return avg;
     }   

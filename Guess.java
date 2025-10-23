@@ -15,16 +15,16 @@ public class Guess
      * @return boolean returns false if g is illegal and true otherwise
      */
     public static boolean checkGuess(int g){
-        if((10000<=g && g<100000)&&(g!=-1)){
+        if((10000<=g && g<100000)||(g==-1)){
             return true;
         }
-        else if((g<10000 || g>=100000)& g!=-1){
+        else{
             System.out.println("Error - your guess must be five digits. Nothing greater. Nothing less. Five.");
             return false;
         }
-        else {
-            return true;
-        }
+        //This one gave me so much issues! I wanted to be in the else-if, but it was going there 
+        //even if I typed in -1.
+        //So decided if it was -1 I would just return true
     }
 
     /**

@@ -4,6 +4,7 @@ import java.util.Scanner;
  *
  * @author Math goddess
  * @version D-level
+ * 
  */
 public class Game
 {
@@ -42,7 +43,7 @@ public class Game
         numGuesses =0;
         numRoundsWon =0;
         quitGame = false;
-        
+        //
     }
     
     /**

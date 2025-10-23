@@ -5,6 +5,7 @@ import java.util.Scanner;
  * @math goddess
  * @version D level
  * 
+ * *
  * //I had a bunch of @param here, but not needed for instance variables.
  * //also only use @param if it has a variable in the parentheses of the method
  */
@@ -18,7 +19,7 @@ public class Round
     private boolean win;
     private boolean quit;
     private Scanner scan;
-
+    //
     /**
      * Constructor for objects of class Round
      * It initializes everything for Round

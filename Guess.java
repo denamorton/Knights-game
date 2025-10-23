@@ -2,6 +2,8 @@
 /**
  * Write a description of class Guess here.
  *
+ *
+ *
  * @math goddess
  * @B-level 
  */
@@ -69,6 +71,7 @@ public class Guess
         //below will not work.
         String secretString = Integer.toString(secret);
         // this changes secret from an integer to a string.
+        //
         
         //here, oranges only count if the digit is correct but not in the same spot, so if i=j, we don't count that.
         for(int i=0; i<5; i++){

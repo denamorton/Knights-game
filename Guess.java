@@ -18,8 +18,13 @@ public class Guess
         if((10000<=g && g<100000)&&(g!=-1)){
             return true;
         }
-        System.out.println("Error - your guess must be five digits. Nothing greater. Nothing less. Five.");
-        return false;
+        else if((g<10000 || g>=100000)& g!=-1){
+            System.out.println("Error - your guess must be five digits. Nothing greater. Nothing less. Five.");
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     /**

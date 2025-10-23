@@ -112,7 +112,7 @@ public class Game
             playAgain();
         
             System.out.println("Number of rounds won: " + numRoundsWon + 
-            " Average number of guesses "+ getAverage());
+            " Average number of guesses: "+ getAverage());
         } 
 
 }

@@ -99,12 +99,20 @@ public class Round
         //class can read it
         
         boolean validGuess=false;//to check that the guess is valid. the default is false.
-        while(validGuess==false){
+        while(validGuess==false&&guess!=-1){
             System.out.println("Please enter your guess or enter -1 to quit.");
             guess=scan.nextInt();
             scan.nextLine();//to get the dang scanner to accept the next scan
             //we use this after scanning nextInt but not after scanning a nextLine
-            Guess.checkGuess(guess); //in the Guess class - determines if guess is valid
+            
+            //originally I didn't update validGuess, so it was stuck in an infinite loop.
+            //BAHHHHHHHHHHHHHHHHHH!
+            //stupid. 
+            if(Guess.checkGuess(guess)==true){
+                validGuess=true;
+            }; 
+            //in the Guess class - determines if guess is valid
+            
         }   
         
         if(guess==-1){
@@ -181,16 +189,15 @@ public class Round
         
         if(apples>0){
             for(int i=0; i<apples; i++){
-                System.out.print("apple");
+                System.out.print("apple ");
             }
-            System.out.println("");
         }
         
         if(oranges>0){
             for(int i=0; i<oranges; i++){
-                System.out.print("orange");
+                System.out.print("orange ");
             }
-            System.out.println("");
         }
+        System.out.println("");
     }
 }

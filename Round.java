@@ -235,8 +235,10 @@ public class Round
          boolean check = false;
          int secretNum = 0;
          while(check==false){
-                secretNum = rng.nextInt(100000)+1;
+                secretNum = rng.nextInt(90000)+10000;
+                //note - this allows me to have a random number between 10000 and `100000
                 check = Guess.hasUniqueDigits(secretNum);
+                //I originally had it do checkDigits, but only needed hasUniqueDigits
             }
          return secretNum;
         }

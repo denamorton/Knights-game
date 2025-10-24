@@ -127,11 +127,13 @@ public class Round
             if(Guess.checkGuess(guess)==true){
                 validGuess=true;
             }; 
-            numGuesses++;
+            
             //I was only counting valid guesses! was supposed to count all guesses.
             //in the Guess class - determines if guess is valid
             
         }   
+        numGuesses++;
+        
         
         if(guess==-1){
             quit = true;

@@ -10,7 +10,7 @@
  *  3. returns the number of digits in wrong place and right number (orange)
  * 
  * In B-level,we can't have duplicated digits. 
- *  4. checks that each guess has no duplicated digits, by using the hasUniqueDigits class
+ *  4. checks that each guess has no duplicated digits, by using the hasUniqueDigits method
  *  
  *
  *
@@ -131,7 +131,7 @@ public class Guess
     public static boolean hasUniqueDigits(int num){
             String numString = Integer.toString(num);
             if(num==-1){
-                return false;
+                return true;
             }
             //because if num=-1 then do something else
             for(int i=0; i<5; i++){

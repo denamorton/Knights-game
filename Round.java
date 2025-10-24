@@ -130,9 +130,9 @@ public class Round
             
             //I was only counting valid guesses! was supposed to count all guesses.
             //in the Guess class - determines if guess is valid
-            
+            numGuesses++;
         }   
-        numGuesses++;
+        
         
         
         if(guess==-1){

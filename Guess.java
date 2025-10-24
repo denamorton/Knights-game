@@ -129,6 +129,10 @@ public class Guess
     //then i=1 and j=0, and then j=1, etc...
     //I was trying to do this with i!=j etc. 
     public static boolean hasUniqueDigits(int num){
+        if(num==-1)
+        {
+            return true;
+        }
         String numString = Integer.toString(num);
             for(int i=0; i<5; i++){
                 for(int j=0; j<i; j++){
@@ -142,5 +146,6 @@ public class Guess
             }
             return true;
         }
+        
 }
 

@@ -236,7 +236,7 @@ public class Round
          int secretNum = 0;
          while(check==false){
                 secretNum = rng.nextInt(100000)+1;
-                check = Guess.checkGuess(secretNum);
+                check = Guess.hasUniqueDigits(secretNum);
             }
          return secretNum;
         }

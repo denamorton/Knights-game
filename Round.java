@@ -130,7 +130,7 @@ public class Round
             
             //I was only counting valid guesses! was supposed to count all guesses.
             //in the Guess class - determines if guess is valid
-            numGuesses++;
+           
         }   
         
         
@@ -139,10 +139,11 @@ public class Round
             quit = true;
         }
         //the guess ==-1 part gave me quite an issue. I believe is fixed now. 
-        //else{
-          // numGuesses++;
-           //if you input -1, that doesn't actually count as a guess.
-        //}
+        else{
+            numGuesses++;
+        }
+            //note that -1 is a valid guess, but doesn't get counted in the number of guesses.
+
         return guess;
         }
     
